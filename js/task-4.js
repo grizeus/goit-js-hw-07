@@ -1,15 +1,22 @@
-const form = document.querySelector(".login-form");
-
-form.addEventListener("input", event => {
+const handleSubmit = event => {
   event.preventDefault();
-    const curInput = event.currentTarget.value.trim();
-    console.log(curInput);
-    if (curInput === "") {
-        alert("All form fields must be filled in");
-    }
-//   if (curInput !== "") {
-//     output.textContent = curInput;
-//   } else {
-//     output.textContent = "Anonymous";
-//   }
-});
+
+  const form = event.target;
+  const emailValue = form.elements.email.value;
+  const passwordValue = form.elements.password.value;
+
+  if (emailValue === "" || passwordValue === "") {
+    return alert("All form fields must be filled in");
+  }
+
+  const data = {
+    email: { name: "email", value: emailValue.trim() },
+    password: { name: "password", value: passwordValue.trim() },
+  };
+
+  console.log(data);
+  form.reset();
+};
+
+const form = document.querySelector(".login-form");
+form.addEventListener("submit", handleSubmit);
