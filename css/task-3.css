@@ -4,13 +4,6 @@ body {
   justify-content: flex-start;
   flex-direction: column;
   gap: 16px;
-  background-color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.04em;
-  color: #2e2f42;
 }
 
 h1 {
@@ -26,12 +19,21 @@ input {
   width: 360px;
   height: 40px;
   padding: 8px 16px;
+  transition:
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    outline 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 input::placeholder {
   opacity: 0.7;
 }
 
-input:focus-visible {
+input:hover {
+  border-color: #000;
+}
+
+input:focus-visible,
+input:focus-within {
   outline: none;
+  border-color: #808080;
 }
