@@ -37,6 +37,44 @@ ol {
   padding-left: 0;
 }
 
+/* TASK1 */
+
+#categories {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#categories h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #f6f6fe;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.item ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item ul li {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  padding: 8px 16px;
+}
+
 #controls {
   display: flex;
   align-items: flex-start;
