@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -11,7 +11,7 @@ body {
   color: #2e2f42;
   background-color: #fff;
 
-  margin: 16px;
+  margin: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,4 +35,69 @@ ol {
   list-style: none;
   margin: 0;
   padding-left: 0;
+}
+
+#controls {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  border-radius: 8px;
+  padding: 32px;
+  width: 486px;
+  height: 104px;
+  background-color: #f6f6fe;
+}
+
+#controls input {
+  font: inherit;
+  text-align: center;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  width: 150px;
+  height: 40px;
+}
+
+button[data-create] {
+  font: inherit;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  background-color: #4e75ff;
+  border: none;
+}
+
+button[data-create]:hover {
+  background-color: #6c8cff;
+}
+
+button[data-destroy] {
+  font: inherit;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  background-color: #ff4e4e;
+  border: none;
+}
+
+button[data-destroy]:hover {
+  background-color: #ff7070;
+}
+
+#boxes {
+  min-width: 486px;
+  margin-top: 16px;
+  display: flex;
+  gap: 32px 44px;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  padding: 32px;
+  background-color: #f6f6fe;
 }
