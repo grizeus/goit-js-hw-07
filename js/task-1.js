@@ -1,14 +1,16 @@
 "use strict";
 
-const categories = document.querySelector("#categories");
-const categoryItems = categories.querySelectorAll(".item");
+const categoryItems = document.querySelectorAll(".item");
 
 console.log(`Number of categories: ${categoryItems.length}`);
 
 categoryItems.forEach(item => {
-  const headingText = item.querySelector("h2").textContent;
-  const elementCount = item.querySelectorAll("li").length;
+  const heading = item.querySelector("h2");
+  if (heading !== null) {
+    const headingText = heading.textContent;
+    const elementCount = item.querySelectorAll("li").length;
 
-  console.log(`Category: ${headingText}`);
-  console.log(`Elements: ${elementCount}`);
+    console.log(`Category: ${headingText}`);
+    console.log(`Elements: ${elementCount}`);
+  }
 });
