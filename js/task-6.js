@@ -11,21 +11,18 @@ const boxesContainer = document.getElementById("boxes");
 
 createBtn.addEventListener("click", () => {
   const input = document.querySelector("#controls input");
-  const numberOfBoxes = input.value;
+  const numberOfBoxes = parseInt(input.value);
 
   if (numberOfBoxes > 0 && numberOfBoxes <= 100) {
     boxesContainer.innerHTML = "";
-    for (let i = 0; i < numberOfBoxes; i++) {
-      const box = document.createElement("div");
+    const boxes = Array.from({ length: numberOfBoxes }, (_, i) => {
       const size = INITIAL_SIZE + i * 10;
-      box.style.width = `${size}px`;
-      box.style.height = `${size}px`;
-      box.style.backgroundColor = getRandomHexColor();
-      boxesContainer.append(box);
-    }
-  } else {
-    return;
+      return `<div style="width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()};"></div>`;
+    }).join("");
+
+    boxesContainer.innerHTML = boxes;
   }
+
   if (input.value !== "") {
     input.value = "";
   }
